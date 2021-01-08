@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Fylo data storage component</title>
+    <link rel="stylesheet" href="dist/main/main.css">
+    <!-- <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="jumbotron d-center">
+        <div class="container d-center" style="flex-direction: column;">
+            <div class="content-box">
+                <div class="content">
+                    <div class="logo-box d-align-center">
+                        <div class="logo-content">
+                            <img src="images/logo.svg" alt="">
+                            <div class="option-box d-justify-center">
+                                <div class="img-box"><img src="images/icon-document.svg" alt=""></div>
+                                <div class="img-box"><img src="images/icon-folder.svg" alt=""></div>
+                                <div class="img-box"><img src="images/icon-upload.svg" alt=""></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="uploading-box d-align-center">
+                        <div class="uploading">
+                            <span style="font-size: 1rem;">You've used <b>815 GB</b> of your storage</span>
+                            <div class="loading-bar">
+                                <div class="loading-content"></div>
+                            </div>
+                            <div class="d-justify-between">
+                                <span>0 GB</span>
+                                <span>1000 GB</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="bg-color">
+            </div>
+            <div class="bg-img">
+            </div>
+        </div>
+        
+        <!-- <div class="d-md-none mob-container"></div> -->
+
+        <div class="popupmsg d-center">
+            <span><b>185</b> GB LEFT</span>
+        </div>
+
+        <div class="mob-popupmsg d-center">
+            <span><b>185</b> GB LEFT</span>
+        </div>
+
+    </div>
+    <script src="dist/main/jquery-3.5.1.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+            updateContainer();
+            $(window).resize(function() {
+                updateContainer();
+            });
+        });
+
+        function updateContainer() {
+            $(document).ready(function() {
+                $('.popupmsg').css("right", $('.content').offset().left + 50);
+                $('.popupmsg').css("top", $('.content').offset().top);
+
+                $('.mob-popupmsg').css("top", $('.content').offset().top + $('.content').outerHeight(true) - 45);
+            })
+        }
+
+        
+    </script>
+</body>
+
+</html>
